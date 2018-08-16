@@ -3,88 +3,9 @@
 <head>
 	<title>JS Assignment</title>
 
-	<style type="text/css">
-		* {
-			box-sizing: border-box;
-		}
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="myjs.js"></script>
 
-		body {
-			padding: 0;
-			margin: 0;
-		}
-
-		table {
-			width: 100%;
-			text-align: center;
-		}
-
-		table ,td ,td, th  {
-			border: 1px solid black;
-			border-collapse: collapse;
-			padding: 10px 0;
-		}
-
-		table tr:nth-child(even) {
-			background-color: #f2f2f2;
-		}
-
-		.row {
-			width: 100%;
-			margin-bottom: 20px;
-		}
-
-		.col-50 {
-			width: 50%;
-			padding: 15px;
-			float: left;
-			overflow: auto;
-		}
-	</style>
-	<script type="text/javascript">
-		var products = [];
-
-		function addItem() {
-			var name = document.getElementById('productName').value;
-			var unitPrice = document.getElementById('unitPrice').value;
-			var quantity = document.getElementById('productQuantity').value;
-
-			if(validate(name, unitPrice, quantity)) {
-				products.push({name: name, unitprice: unitPrice, qty: quantity});
-				addRow(name, unitPrice, quantity);
-			}
-			else {
-				window.alert("Entered Data is not Valid");
-			}
-		}
-
-		function addRow(name, price, qty) {
-			document.getElementById('productTable').innerHTML += "<tr><td>"+name+"</td><td>"+price+"</td><td>"+qty+"</td></tr>";
-		}
-
-		function validate(name, unitprice , quantity) {
-			if(name == "" || isNaN(quantity) || isNaN(unitprice) || quantity <= 0 || unitprice <= 0)
-				return false;
-			else
-				return true;
-		}
-
-		function calculateTotal() {
-			var total = 0;
-			for(var i in products) {
-				total += products[i].unitprice * products[i].qty;
-			}
-			document.getElementById('displayTotal').innerHTML = "TOTAL: " + total;
-		}
-
-		function clearPage() {
-			products = [];
-			document.getElementById('productTable').innerHTML = "";
-			document.getElementById('displayTotal').innerHTML = "TOTAL: ";
-			document.getElementById('productName').value = "";
-			document.getElementById('productQuantity').value = "";
-			document.getElementById('unitPrice').value = "";
-		}
-	</script>
 </head>
 <body>
 	<div class="row">
@@ -97,7 +18,7 @@
 						<th>Quantity</th>
 					</tr>
 				</thead>
-				<tbody id="productTable">
+				<tbody id="product_table">
 				</tbody>
 			</table>
 		</div>
@@ -106,17 +27,17 @@
 			<div class="row">
 				<div class="row">
 					<label>Product Name: </label><br>
-					<input type="text" name="productName" id="productName">
+					<input type="text" name="product_name" id="product_name">
 				</div>
 
 				<div class="row">
 					<label>Unit Price: </label><br>
-					<input type="text" name="unitPrice" id="unitPrice">
+					<input type="text" name="unit_price" id="unit_price">
 				</div>
 
 				<div class="row">
 					<label>Product Quantity: </label><br>
-					<input type="text" name="productQuantity" id="productQuantity">
+					<input type="text" name="product_quantity" id="product_quantity">
 				</div>
 
 				<div class="row">
@@ -132,7 +53,7 @@
 				</div>
 
 				<div class="row">
-					<h1 id="displayTotal">TOTAL: </h1>
+					<h1 id="display_total">TOTAL: </h1>
 				</div>
 			</div>
 		</div>

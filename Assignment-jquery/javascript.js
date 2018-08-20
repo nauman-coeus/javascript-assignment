@@ -3,8 +3,7 @@ $('document').ready(function() {
 	var startTd = "<td>";
 	var endTd = "</td>";
 	var deleteBtn = '<button class="delete_btn">Delete</button>';
-	accessKey = '70257e500498f0352958779ca95ecccc';
-
+	var accessKey = '70257e500498f0352958779ca95ecccc';
 
 	$('table').on('click', 'button.delete_btn',function() {
 		$(this).parents('tr').remove();
